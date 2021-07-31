@@ -1,11 +1,12 @@
 const { src, dest } = require('gulp');
-const scss = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 
 function styles(){
-    return src('app/scss/style.scss')
-     .pipe(scss())
-     .pipe(dest('app/css'))
+    return src('./app/scss/**/*.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(dest('./dist'));
 }
+
 
 exports.styles = styles;
