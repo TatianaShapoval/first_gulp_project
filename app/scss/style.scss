@@ -1,8 +1,16 @@
 body{
-    color: aqua;
-    .test {
-        color: black;
-    } 
+    background-color: pink;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    &__list{
+        margin: 0;
+        padding: 0;
+    }
+}
+.test{
+    display: grid;
 }
 
 
